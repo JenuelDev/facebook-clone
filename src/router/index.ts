@@ -7,6 +7,10 @@ const router = createRouter({
       path: '/',
       component: LoginView
     },
+    {
+      path: '/timeline',
+      component: () => import("./../views/Pages/TimeLine/TimeLineView.vue")
+    }
   ]
 })
 
