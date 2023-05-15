@@ -14,9 +14,9 @@ import ProfileMenu from "./ProfileMenu.vue";
         <div class="max-w-600px w-full">
             <div class="relative">
                 <input
-                    type="text"
-                    placeholder="Search Facebook"
                     class="py-6px pl-40px pr-16px rounded-full w-full border active:outline-[var(--primary)] focus:outline-[var(--primary)] w-full bg-[var(--background)]"
+                    placeholder="Search Facebook"
+                    type="text"
                 />
                 <Icon
                     class="text-size-22px opacity-50 absolute left-10px top-10px"
