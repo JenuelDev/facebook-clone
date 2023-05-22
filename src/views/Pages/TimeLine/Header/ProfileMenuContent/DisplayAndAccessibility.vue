@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
+import useThemeStore from "@/stores/theme";
 
+const themeStore = useThemeStore();
 const emits = defineEmits(["action"]);
 </script>
 
@@ -9,15 +11,14 @@ const emits = defineEmits(["action"]);
         <div class="flex gap-3 items-center">
             <div
                 class="w-40px h-40px rounded-full bg-white hover:bg-gray-200 flex items-center justify-center cursor-pointer text-size-20px"
-                @click="emits('action', 'default')">
+                @click="emits('action', 'default')"
+            >
                 <Icon icon="material-symbols:arrow-back" />
             </div>
             <div class="font-700 text-size-20px">Display & accessibility</div>
         </div>
         <div class="mt-5">
-            <div
-                class="flex items-center justify-between"
-            >
+            <div class="flex items-center justify-between">
                 <div class="flex gap-3">
                     <div>
                         <div
@@ -31,18 +32,31 @@ const emits = defineEmits(["action"]);
                     </div>
                     <div>
                         <div class="font-700 px-2">Dark Mode</div>
-                        <p class="text-size-14px opacity-75 px-2 mb-3">Adjust the appearance of Facebook to reduce glare and
-                            give
-                            your eyes a break.</p>
+                        <p class="text-size-14px opacity-75 px-2 mb-3">
+                            Adjust the appearance of Facebook to reduce glare
+                            and give your eyes a break.
+                        </p>
                         <div
-                            class="flex justify-between bg-white hover:bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-lg py-2 px-2 mb-1">
+                            class="flex justify-between bg-white hover:bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-lg py-2 px-2 mb-1"
+                            @click="themeStore.mode = 'light'"
+                        >
                             <span>Off</span>
-                            <input id="" name="" type="radio">
+                            <input
+                                value="light"
+                                type="radio"
+                                v-model="themeStore.mode"
+                            />
                         </div>
                         <div
-                            class="flex justify-between bg-white hover:bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-lg py-2 px-2">
+                            class="flex justify-between bg-white hover:bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-lg py-2 px-2"
+                            @click="themeStore.mode = 'dark'"
+                        >
                             <span>On</span>
-                            <input id="" name="" type="radio">
+                            <input
+                                value="dark"
+                                type="radio"
+                                v-model="themeStore.mode"
+                            />
                         </div>
                     </div>
                 </div>

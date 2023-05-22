@@ -7,34 +7,33 @@ const menuOptions = [
         label: "Settings",
         icon: "material-symbols:settings-rounded",
         key: "setting",
-        hasContent: false
+        hasContent: false,
     },
     {
         label: "Language",
         icon: "material-symbols:language",
         key: "language",
-        hasContent: false
+        hasContent: false,
     },
     {
         label: "Privacy Checkup",
         icon: "streamline:computer-desktop-lock-device-secure-display-computer-lock-desktop-padlock-security",
         key: "privacy-checkup",
-        hasContent: false
+        hasContent: false,
     },
     {
         label: "Activity Log",
         icon: "ic:baseline-format-list-bulleted",
         key: "activity-log",
-        hasContent: false
+        hasContent: false,
     },
     {
         label: "Feed",
         icon: "material-symbols:event-list-rounded",
         key: "feed",
-        hasContent: false
-    }
+        hasContent: false,
+    },
 ];
-
 </script>
 
 <template>
@@ -42,7 +41,8 @@ const menuOptions = [
         <div class="flex gap-3 items-center">
             <div
                 class="w-40px h-40px rounded-full bg-white hover:bg-gray-200 flex items-center justify-center cursor-pointer text-size-20px"
-                @click="emits('action', 'default')">
+                @click="emits('action', 'default')"
+            >
                 <Icon icon="material-symbols:arrow-back" />
             </div>
             <div class="font-700 text-size-20px">Settings & privacy</div>

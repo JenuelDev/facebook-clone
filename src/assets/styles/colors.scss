@@ -1,5 +1,13 @@
 :root {
     --background: #f0f2f5;
+    --secondary-background: #fff;
     --primary: #0571ed;
     --green: #34a61d;
+}
+
+.dark {
+    --background: #18191a;
+    --secondary-background: #212121;
+    --third-background: #3a3b3c;
+    color: rgb(223, 223, 223);
 }

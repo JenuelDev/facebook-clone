@@ -17,7 +17,7 @@ onClickOutside(profileMenuButtonRef, () => (showDropDownBox.value = false));
         <transition name="button-dropdown">
             <div
                 v-show="showDropDownBox"
-                class="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none w-[100vw]"
+                class="absolute right-0 z-10 mt-2 origin-top-right rounded-md light:bg-white dark:bg-[var(--secondary-background)] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none w-[100vw]"
                 :style="`max-width: ${props.boxWidth}`"
                 role="menu"
                 aria-orientation="vertical"

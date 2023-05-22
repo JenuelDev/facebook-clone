@@ -1,37 +1,37 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
-const emits = defineEmits(['action'])
+const emits = defineEmits(["action"]);
 const menuOptions = [
     {
         label: "Settings & privacy",
         icon: "material-symbols:settings-rounded",
         key: "settings",
-        hasContent: true
+        hasContent: true,
     },
     {
         label: "Help & support",
         icon: "material-symbols:help-rounded",
         key: "help",
-        hasContent: true
+        hasContent: true,
     },
     {
         label: "Display & accessibility",
         icon: "material-symbols:dark-mode",
         key: "display",
-        hasContent: true
+        hasContent: true,
     },
     {
         label: "Give feedback",
         icon: "ic:baseline-feedback",
         key: "feedback",
-        hasContent: false
+        hasContent: false,
     },
     {
         label: "Log Out",
         icon: "majesticons:door-exit",
         key: "logout",
-        hasContent: false
-    }
+        hasContent: false,
+    },
 ];
 </script>
 <template>
@@ -45,7 +45,8 @@ const menuOptions = [
                         <img
                             alt="profile image"
                             class="group-hover:opacity-75"
-                            src="/images/profile/profile.jpg" />
+                            src="/images/profile/profile.jpg"
+                        />
                     </div>
                     <span class="font-600">Maria Clara</span>
                 </div>

@@ -4,17 +4,19 @@ import ProfileMenu from "./ProfileMenu.vue";
 </script>
 <template>
     <div
-        class="flex fixed top-0 left-0 w-full bg-white md:pt-3 pt-1 md:px-5 px-3 pb-2 shadow-md items-center"
+        class="flex fixed top-0 left-0 w-full bg-[var(--secondary-background)] md:pt-3 pt-1 md:px-5 px-3 pb-2 shadow-md items-center"
     >
         <div class="w-full">
-            <h2 class="text-size-30px font-600 text-[var(--primary)]">
+            <h2
+                class="text-size-30px font-600 light:text-[var(--primary)] dark:text-white"
+            >
                 facebook
             </h2>
         </div>
         <div class="max-w-600px w-full">
-            <div class="relative">
+            <div class="relative dark:text-white">
                 <input
-                    class="py-6px pl-40px pr-16px rounded-full w-full border active:outline-[var(--primary)] focus:outline-[var(--primary)] w-full bg-[var(--background)]"
+                    class="py-6px pl-40px pr-16px rounded-full w-full light:border light:active:outline-[var(--primary)] light:focus:outline-[var(--primary)] w-full light:bg-[var(--background)] dark:bg-[var(--third-background)] dark:border-[var(--third-background)]"
                     placeholder="Search Facebook"
                     type="text"
                 />
@@ -26,7 +28,7 @@ import ProfileMenu from "./ProfileMenu.vue";
         </div>
         <div class="flex w-full justify-end gap-2 select-none">
             <div
-                class="h-40px w-40px transform bg-gray-200 hover:bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-full"
+                class="h-40px w-40px transform light:bg-gray-200 dark:bg-[var(--third-background)] light:hover:bg-gray-300 dark:hover:bg-gray-600 active:scale-90 cursor-pointer flex items-center justify-center rounded-full dark:text-gray-200"
             >
                 <Icon
                     class="md:text-size-20px text-size-20px"
@@ -34,7 +36,7 @@ import ProfileMenu from "./ProfileMenu.vue";
                 />
             </div>
             <div
-                class="h-40px w-40px bg-gray-200 hover:bg-gray-300 cursor-pointer flex items-center justify-center rounded-full transform active:scale-90"
+                class="h-40px w-40px light:bg-gray-200 dark:bg-[var(--third-background)] light:hover:bg-gray-300 cursor-pointer flex items-center justify-center rounded-full transform active:scale-90 dark:text-gray-200 dark:hover:bg-gray-600"
             >
                 <Icon
                     class="md:text-size-20px text-size-20px"

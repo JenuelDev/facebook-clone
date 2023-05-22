@@ -10,14 +10,14 @@ import DisplayAndAccessibility from "@/views/Pages/TimeLine/Header/ProfileMenuCo
 const selectedMenu = ref("default");
 
 function actionHandler(key: string) {
-    if (key == 'feedback') {
+    if (key == "feedback") {
         alert("Feed Back");
-        return
+        return;
     }
 
-    if (key == 'logout') {
+    if (key == "logout") {
         alert("Logout");
-        return
+        return;
     }
 
     selectedMenu.value = key;
@@ -36,17 +36,29 @@ function actionHandler(key: string) {
                 />
             </div>
             <Icon
-                class="md:text-size-20px text-size-20px bottom-0 right-0 absolute border-1 bg-white border-white rounded-full shadow-sm"
+                class="md:text-size-20px text-size-20px bottom-0 right-0 absolute border-1 light:bg-white dark:bg-gray-600 light:border-white dark:border-gray-700 rounded-full shadow-sm"
                 icon="ic:outline-more-horiz"
             />
         </div>
         <template #content>
             <div class="p-3 overflow-hidden" role="none">
                 <transition name="facebook-menu-transition">
-                    <DefaultContent v-if="selectedMenu === 'default'" @action="actionHandler" />
-                    <SettingsAndPrivacy v-else-if="selectedMenu === 'settings'" @action="actionHandler" />
-                    <HelpAndSupport v-else-if="selectedMenu === 'help'" @action="actionHandler" />
-                    <DisplayAndAccessibility v-else-if="selectedMenu === 'display'" @action="actionHandler" />
+                    <DefaultContent
+                        v-if="selectedMenu === 'default'"
+                        @action="actionHandler"
+                    />
+                    <SettingsAndPrivacy
+                        v-else-if="selectedMenu === 'settings'"
+                        @action="actionHandler"
+                    />
+                    <HelpAndSupport
+                        v-else-if="selectedMenu === 'help'"
+                        @action="actionHandler"
+                    />
+                    <DisplayAndAccessibility
+                        v-else-if="selectedMenu === 'display'"
+                        @action="actionHandler"
+                    />
                 </transition>
             </div>
         </template>
@@ -55,18 +67,18 @@ function actionHandler(key: string) {
 <style lang="scss">
 .facebook-menu-transition-enter-active,
 .facebook-menu-transition-leave-active {
-  transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
 }
 
 .facebook-menu-transition-enter-from {
-  opacity: 0;
-  transform: translateY(30px);
-  position: absolute;
+    opacity: 0;
+    transform: translateY(30px);
+    position: absolute;
 }
 
 .facebook-menu-transition-leave-to {
-  opacity: 0;
-  transform: translateY(-30px);
-  position: absolute;
+    opacity: 0;
+    transform: translateY(-30px);
+    position: absolute;
 }
 </style>
