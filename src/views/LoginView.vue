@@ -54,7 +54,7 @@ function submit() {
                         type="text"
                     />
                     <input
-                        class="py-14px px-16px rounded-md w-full outline-none light:border light:active:outline-[var(--primary)] focus:outline-[var(--primary)] dark:bg-[var(--third-background)]e"
+                        class="py-14px px-16px rounded-md w-full outline-none light:border light:active:outline-[var(--primary)] focus:outline-[var(--primary)] dark:bg-[var(--third-background)]"
                         placeholder="Password"
                         type="password"
                     />
