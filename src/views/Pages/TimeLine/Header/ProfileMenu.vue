@@ -2,12 +2,25 @@
 import { Icon } from "@iconify/vue";
 import DropDownComponent from "@/components/DropDown/DropDownComponent.vue";
 import DefaultContent from "./ProfileMenuContent/DefaultContent.vue";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import SettingsAndPrivacy from "@/views/Pages/TimeLine/Header/ProfileMenuContent/SettingsAndPrivacy.vue";
 import HelpAndSupport from "@/views/Pages/TimeLine/Header/ProfileMenuContent/HelpAndSupport.vue";
 import DisplayAndAccessibility from "@/views/Pages/TimeLine/Header/ProfileMenuContent/DisplayAndAccessibility.vue";
+import router from "@/router";
 
+const showMenu = ref(false);
 const selectedMenu = ref("default");
+
+watch(
+    () => showMenu.value,
+    (val) => {
+        if (!val) {
+            setTimeout(() => {
+                selectedMenu.value = "default"; // reset menu
+            }, 500);
+        }
+    }
+);
 
 function actionHandler(key: string) {
     if (key == "feedback") {
@@ -16,7 +29,8 @@ function actionHandler(key: string) {
     }
 
     if (key == "logout") {
-        alert("Logout");
+        alert("Logged Out!");
+        router.push("/");
         return;
     }
 
@@ -24,7 +38,7 @@ function actionHandler(key: string) {
 }
 </script>
 <template>
-    <DropDownComponent box-width="350px">
+    <DropDownComponent v-model="showMenu" box-width="350px">
         <div class="relative transform active:scale-90 cursor-pointer group">
             <div
                 class="h-40px w-40px bg-gray-500 flex items-center justify-center rounded-full overflow-hidden relative"

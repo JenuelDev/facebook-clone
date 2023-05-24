@@ -10,7 +10,7 @@ const emits = defineEmits(["action"]);
     <div>
         <div class="flex gap-3 items-center">
             <div
-                class="w-40px h-40px rounded-full bg-white hover:bg-gray-200 flex items-center justify-center cursor-pointer text-size-20px"
+                class="w-40px h-40px rounded-full light:bg-white dark:hover:bg-[var(--third-background)] light:hover:bg-gray-200 flex items-center justify-center cursor-pointer text-size-20px"
                 @click="emits('action', 'default')"
             >
                 <Icon icon="material-symbols:arrow-back" />
@@ -22,7 +22,7 @@ const emits = defineEmits(["action"]);
                 <div class="flex gap-3">
                     <div>
                         <div
-                            class="h-40px w-40px transform flex justify-center bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-full"
+                            class="h-40px w-40px transform flex justify-center light:bg-gray-300 dark:bg-[var(--third-background)] active:scale-90 cursor-pointer flex items-center justify-center rounded-full"
                         >
                             <Icon
                                 class="md:text-size-20px text-size-20px"
@@ -37,7 +37,7 @@ const emits = defineEmits(["action"]);
                             and give your eyes a break.
                         </p>
                         <div
-                            class="flex justify-between bg-white hover:bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-lg py-2 px-2 mb-1"
+                            class="flex justify-between light:bg-white light:hover:bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-lg py-2 px-2 mb-1 dark:hover:bg-[var(--third-background)]"
                             @click="themeStore.mode = 'light'"
                         >
                             <span>Off</span>
@@ -48,7 +48,7 @@ const emits = defineEmits(["action"]);
                             />
                         </div>
                         <div
-                            class="flex justify-between bg-white hover:bg-gray-300 active:scale-90 cursor-pointer flex items-center justify-center rounded-lg py-2 px-2"
+                            class="flex justify-between light:bg-white light:hover:bg-gray-300 dark:hover:bg-[var(--third-background)] active:scale-90 cursor-pointer flex items-center justify-center rounded-lg py-2 px-2"
                             @click="themeStore.mode = 'dark'"
                         >
                             <span>On</span>

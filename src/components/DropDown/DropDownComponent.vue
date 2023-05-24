@@ -1,11 +1,21 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { onClickOutside } from "@vueuse/core";
+
 const profileMenuButtonRef = ref(null);
 const showDropDownBox = ref(false);
+const emit = defineEmits(["update:modelValue"]);
 const props = defineProps({
+    modelValue: Boolean,
     boxWidth: { type: String, default: "300px" },
 });
+
+watch(
+    () => showDropDownBox.value,
+    (val) => {
+        emit("update:modelValue", val);
+    }
+);
 onClickOutside(profileMenuButtonRef, () => (showDropDownBox.value = false));
 </script>
 <template>
