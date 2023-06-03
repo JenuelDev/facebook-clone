@@ -58,7 +58,7 @@ onMounted(() => {
                 }}</small>
             </div>
             <div
-                class="h-40px w-40px light:bg-white shadow-md flex items-center justify-center absolute right-60px rounded-full hidden group-hover:flex light:hover:bg-gray-300 top-10px"
+                class="h-40px w-40px light:bg-white shadow-md flex items-center justify-center absolute right-60px rounded-full hidden group-hover:flex light:hover:bg-gray-300 dark:bg-[var(--third-background)] dark:hover:bg-[var(--background)] top-10px"
             >
                 <Icon class="text-size-25px" icon="mdi:dots-horizontal" />
             </div>
