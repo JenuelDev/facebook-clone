@@ -26,9 +26,11 @@ watch(
         <div class="relative transform active:scale-90 cursor-pointer group">
             <div
                 class="h-40px w-40px transform light:bg-gray-200 dark:bg-[var(--third-background)] light:hover:bg-gray-300 dark:hover:bg-gray-600 active:scale-90 cursor-pointer flex items-center justify-center rounded-full dark:text-gray-200"
+                :class="{ '!bg-[var(--primary-lite)]': showMenu }"
             >
                 <Icon
                     class="md:text-size-20px text-size-20px"
+                    :class="{ 'text-[var(--primary)]': showMenu }"
                     icon="mdi:facebook-messenger"
                 />
             </div>
