@@ -2,6 +2,7 @@
 import { Icon } from "@iconify/vue";
 import ProfileMenu from "./ProfileMenu.vue";
 import ChatMenu from "./ChatMenu.vue";
+import NotificationMenu from "./NotificationMenu.vue";
 </script>
 <template>
     <div
@@ -29,14 +30,7 @@ import ChatMenu from "./ChatMenu.vue";
         </div>
         <div class="flex w-full justify-end gap-2 select-none">
             <ChatMenu />
-            <div
-                class="h-40px w-40px light:bg-gray-200 dark:bg-[var(--third-background)] light:hover:bg-gray-300 cursor-pointer flex items-center justify-center rounded-full transform active:scale-90 dark:text-gray-200 dark:hover:bg-gray-600"
-            >
-                <Icon
-                    class="md:text-size-20px text-size-20px"
-                    icon="mdi:bell"
-                />
-            </div>
+            <NotificationMenu />
             <ProfileMenu />
         </div>
     </div>

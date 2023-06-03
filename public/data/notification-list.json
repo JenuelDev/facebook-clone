@@ -1,0 +1,25 @@
+{
+    "list": [
+        {
+            "id": 1,
+            "notification_type": "bell",
+            "message": "You have memory with <b>Mike Tyson</b>, <b>James Yap</b>, and <b>Others</b>",
+            "date_time": 1685790669391,
+            "image_icon": "https://i.imgur.com/sUB82szs.png"
+        },
+        {
+            "id": 2,
+            "notification_type": "live",
+            "message": "<b>Benguet - Electric Department</b> was live: \"The 42nd Annual General Membership Offer for something\"",
+            "date_time": 1685618750000,
+            "image_icon": "https://i.imgur.com/V5gAY1Js.png"
+        },
+        {
+            "id": 3,
+            "notification_type": "group",
+            "message": "<b>Elon Musk</b> posted in <b>Elon Musks Team Group</b>",
+            "date_time": 1685618750000,
+            "image_icon": "https://i.imgur.com/V5gAY1Js.png"
+        }
+    ]
+}
