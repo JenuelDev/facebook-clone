@@ -19,7 +19,35 @@
             "notification_type": "group",
             "message": "<b>Elon Musk</b> posted in <b>Elon Musks Team Group</b>",
             "date_time": 1685618750000,
-            "image_icon": "https://i.imgur.com/V5gAY1Js.png"
+            "image_icon": "https://i.imgur.com/hyXoUXGs.png"
+        },
+        {
+            "id": 4,
+            "notification_type": "birthday",
+            "message": "<b>Bravo Casino</b> and 5 others have birthday. Send them some good thoughts.",
+            "date_time": 1685693530000,
+            "image_icon": "https://i.imgur.com/YiwjD1ss.png"
+        },
+        {
+            "id": 5,
+            "notification_type": "post",
+            "message": "<b>John Denver</b> added a new photo.",
+            "date_time": 1685779930000,
+            "image_icon": "https://i.imgur.com/ppTzyMas.jpg"
+        },
+        {
+            "id": 5,
+            "notification_type": "comment",
+            "message": "<b>Jamaica Gonzal</b> commented on your photo.",
+            "date_time": 1685779930000,
+            "image_icon": "https://i.imgur.com/iNifg5Es.png"
+        },
+        {
+            "id": 5,
+            "notification_type": "react-heart",
+            "message": "<b>Marco Lokato</b> reacted to your comment: \"<b>Congratulations</b>\"",
+            "date_time": 1685607130000,
+            "image_icon": "https://i.imgur.com/vjD33g3s.png"
         }
     ]
 }

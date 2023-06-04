@@ -4,21 +4,21 @@ import { onMounted, ref } from "vue";
 import axios from "axios";
 import { Block } from "notiflix";
 
-const messages = ref<
+const notifications = ref<
     Array<{
         id: string | number;
-        type: string;
-        latest_message_summary: string;
+        notification_type: string;
+        message: string;
         communicating_with: string;
-        profile_image_thumbnail: string;
+        image_icon: string;
     }>
 >([]);
 
 function getMessageList() {
     axios
-        .get("/data/messenger-list.json")
+        .get("/data/notification-list.json")
         .then(({ data }: { data: any }) => {
-            messages.value = data.data;
+            notifications.value = data.list;
         })
         .catch((e) => {
             alert(e);
@@ -38,29 +38,79 @@ onMounted(() => {
 <template>
     <div id="chat-message-list" class="h-full overflow-y-auto pr-1">
         <div
-            v-for="message in messages"
-            :key="message.id"
-            class="flex gap-2 p-2 light:hover:bg-[var(--background)] cursor-pointer rounded-lg relative group"
+            v-for="notification in notifications"
+            :key="notification.id"
+            class="flex gap-4 p-2 light:hover:bg-[var(--background)] cursor-pointer rounded-lg relative group dark:hover:bg-[var(--third-background)] mb-1 items-center"
         >
-            <div
-                class="relative h-40px w-40px bg-[var(--background)] rounded-full overflow-hidden"
-            >
-                <img
-                    :src="message.profile_image_thumbnail"
-                    class="absolute"
-                    alt=""
-                />
+            <div class="relative">
+                <div
+                    class="relative h-50px w-50px bg-[var(--background)] rounded-full overflow-hidden"
+                >
+                    <img
+                        :src="notification.image_icon"
+                        class="absolute"
+                        alt=""
+                    />
+                </div>
+                <div
+                    class="flex items-center justify-center w-30px h-30px absolute -bottom-2 -right-2 rounded-full"
+                    :class="{
+                        'bg-[var(--primary)]': [
+                            'bell',
+                            'group',
+                            'post',
+                        ].includes(notification.notification_type),
+                        'bg-red-500': ['live', 'react-heart'].includes(
+                            notification.notification_type
+                        ),
+                        'bg-pink-600':
+                            notification.notification_type == 'birthday',
+                        'bg-green-500':
+                            notification.notification_type == 'comment',
+                    }"
+                >
+                    <Icon
+                        v-if="notification.notification_type == 'bell'"
+                        icon="ic:baseline-notifications"
+                        class="text-size-23px"
+                    />
+                    <Icon
+                        v-if="notification.notification_type == 'live'"
+                        icon="material-symbols:live-tv"
+                        class="text-size-23px"
+                    />
+                    <Icon
+                        v-if="notification.notification_type == 'group'"
+                        icon="material-symbols:groups"
+                        class="text-size-20px"
+                    />
+                    <Icon
+                        v-if="notification.notification_type == 'birthday'"
+                        icon="icon-park-twotone:birthday-cake"
+                        class="text-size-23px"
+                    />
+                    <Icon
+                        v-if="notification.notification_type == 'post'"
+                        icon="material-symbols:post-add"
+                        class="text-size-23px"
+                    />
+                    <Icon
+                        v-if="notification.notification_type == 'comment'"
+                        icon="iconamoon:comment-dots-fill"
+                        class="text-size-23px"
+                    />
+                    <Icon
+                        v-if="notification.notification_type == 'react-heart'"
+                        icon="material-symbols:favorite"
+                        class="text-size-23px"
+                    />
+                </div>
             </div>
             <div>
-                <div class="-mb-7px">{{ message.communicating_with }}</div>
-                <small class="opacity-60">{{
-                    message.latest_message_summary
-                }}</small>
-            </div>
-            <div
-                class="h-40px w-40px light:bg-white shadow-md flex items-center justify-center absolute right-60px rounded-full hidden group-hover:flex light:hover:bg-gray-300 dark:bg-[var(--third-background)] dark:hover:bg-[var(--background)] top-10px"
-            >
-                <Icon class="text-size-25px" icon="mdi:dots-horizontal" />
+                <div
+                    class="text-size-15px leading-normal"
+                    v-html="notification.message"
+                ></div>
             </div>
         </div>
     </div>

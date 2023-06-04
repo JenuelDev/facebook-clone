@@ -3,6 +3,7 @@ import { Icon } from "@iconify/vue";
 import DropDownComponent from "@/components/DropDown/DropDownComponent.vue";
 import { ref, watch } from "vue";
 import NotificationHeader from "./NotificationMenuComponents/NotificationHeader.vue";
+import NotificationList from "./NotificationMenuComponents/NotificationList.vue";
 
 const showMenu = ref(false);
 const selectedMenu = ref("default");
@@ -46,9 +47,7 @@ watch(
                         See All
                     </div>
                 </div>
-                <!-- <ChatSearchInput />
-                <ChatChipButtons />
-                <ChatMessageList v-if="showMenu" /> -->
+                <NotificationList v-if="showMenu" />
             </div>
         </template>
     </DropDownComponent>
