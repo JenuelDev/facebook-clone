@@ -32,7 +32,7 @@ onMounted(() => {
     });
     setTimeout(() => {
         getMessageList();
-    }, 2000);
+    }, 1000);
 });
 </script>
 <template>
@@ -53,7 +53,7 @@ onMounted(() => {
                     />
                 </div>
                 <div
-                    class="flex items-center justify-center w-30px h-30px absolute -bottom-2 -right-2 rounded-full"
+                    class="flex items-center justify-center w-30px h-30px absolute -bottom-2 -right-2 rounded-full text-white"
                     :class="{
                         'bg-[var(--primary)]': [
                             'bell',
@@ -108,7 +108,7 @@ onMounted(() => {
             </div>
             <div>
                 <div
-                    class="text-size-15px leading-normal"
+                    class="text-size-15px leading-snug"
                     v-html="notification.message"
                 ></div>
             </div>

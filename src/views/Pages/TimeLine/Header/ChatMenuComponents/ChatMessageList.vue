@@ -32,7 +32,7 @@ onMounted(() => {
     });
     setTimeout(() => {
         getMessageList();
-    }, 2000);
+    }, 1000);
 });
 </script>
 <template>
