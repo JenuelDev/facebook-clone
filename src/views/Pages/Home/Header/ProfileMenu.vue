@@ -3,9 +3,9 @@ import { Icon } from "@iconify/vue";
 import DropDownComponent from "@/components/DropDown/DropDownComponent.vue";
 import DefaultContent from "./ProfileMenuContent/DefaultContent.vue";
 import { ref, watch } from "vue";
-import SettingsAndPrivacy from "@/views/Pages/TimeLine/Header/ProfileMenuContent/SettingsAndPrivacy.vue";
-import HelpAndSupport from "@/views/Pages/TimeLine/Header/ProfileMenuContent/HelpAndSupport.vue";
-import DisplayAndAccessibility from "@/views/Pages/TimeLine/Header/ProfileMenuContent/DisplayAndAccessibility.vue";
+import SettingsAndPrivacy from "@/views/Pages/Home/Header/ProfileMenuContent/SettingsAndPrivacy.vue";
+import HelpAndSupport from "@/views/Pages/Home/Header/ProfileMenuContent/HelpAndSupport.vue";
+import DisplayAndAccessibility from "@/views/Pages/Home/Header/ProfileMenuContent/DisplayAndAccessibility.vue";
 import router from "@/router";
 
 const showMenu = ref(false);

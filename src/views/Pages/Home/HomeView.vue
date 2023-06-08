@@ -5,9 +5,13 @@ import RightSideContent from "./RightSide/RightSideContent.vue";
 </script>
 <template>
     <HeaderComponent />
-    <div class="pt-70px flex justify-between">
+    <div
+        class="flex justify-between h-100vh overflow-y-auto pt-[var(--header-height)] overflowing-div"
+    >
         <LeftSideContent />
-        <div class="max-w-600px w-full">Time Line Page</div>
+        <div class="max-w-600px w-full h-[calc(100% - 70px)]">
+            <RouterView />
+        </div>
         <RightSideContent />
     </div>
 </template>

@@ -6,7 +6,7 @@ import NotificationMenu from "./NotificationMenu.vue";
 </script>
 <template>
     <div
-        class="flex fixed top-0 left-0 w-full bg-[var(--secondary-background)] md:pt-3 pt-1 md:px-5 px-3 pb-2 shadow-md items-center"
+        class="flex fixed top-0 left-0 w-full bg-[var(--secondary-background)] md:pt-3 pt-1 md:px-5 px-3 pb-2 shadow-md items-center z-99 h-[var(--header-height)]"
     >
         <div class="w-full">
             <h2

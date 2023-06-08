@@ -7,7 +7,7 @@ import useThemeStore from "@/stores/theme";
 const themeStore = useThemeStore();
 const router = useRouter();
 const data = reactive({
-    loading: false
+    loading: false,
 });
 
 function submit() {
@@ -15,16 +15,23 @@ function submit() {
 
     setTimeout(() => {
         data.loading = false;
-        router.push("/timeline");
+        router.push("/home");
     }, 1000);
 }
 </script>
 <template>
     <div class="fixed top-10px right-10px text-size-30px cursor-pointer">
         <transition name="fade">
-            <Icon v-if="themeStore.mode == 'light'" icon="material-symbols:dark-mode-rounded"
-                  @click="themeStore.mode = 'dark'" />
-            <Icon v-else-if="themeStore.mode == 'dark'" icon="ic:sharp-wb-sunny" @click="themeStore.mode = 'light'" />
+            <Icon
+                v-if="themeStore.mode == 'light'"
+                icon="material-symbols:dark-mode-rounded"
+                @click="themeStore.mode = 'dark'"
+            />
+            <Icon
+                v-else-if="themeStore.mode == 'dark'"
+                icon="ic:sharp-wb-sunny"
+                @click="themeStore.mode = 'light'"
+            />
         </transition>
     </div>
     <div class="h-[100vh] flex flex-col">
@@ -87,7 +94,9 @@ function submit() {
                 </div>
             </div>
         </div>
-        <div class="w-full py-5 light:bg-white dark:bg-[var(--secondary-background)]">
+        <div
+            class="w-full py-5 light:bg-white dark:bg-[var(--secondary-background)]"
+        >
             <div class="max-w-1000px mx-auto w-full">
                 This is a footer, you can add whatever you like in here.
             </div>
