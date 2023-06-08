@@ -158,7 +158,7 @@ const links = [
     <div
         class="w-full max-w-300px sticky top-0 overflow-y-auto h-[calc(100% - var(--header-height))] flex flex-col justify-between pb-20px overflowing-div"
     >
-        <div>
+        <div class="mt-3">
             <template
                 v-for="defaultMenu in DefaultMenus"
                 :key="defaultMenu.path"
