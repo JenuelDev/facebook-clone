@@ -37,12 +37,14 @@ const value = computed({
             class="flex items-center gap-4 group-hover:bg-[var(--secondary-background)] w-full p-2 rounded-md"
         >
             <Icon
-                class="text-size-23px"
+                class="text-size-23px w-30px"
                 :class="{ 'text-[var(--primary)]': value == prop.menu.key }"
                 v-if="prop.menu.icon"
                 :icon="prop.menu.icon"
             />
-            <span class="m-0 p-0">{{ prop.menu.title }}</span>
+            <span class="m-0 p-0 lg:block md:hidden block">{{
+                prop.menu.title
+            }}</span>
         </div>
     </div>
     <div
@@ -66,7 +68,7 @@ const value = computed({
                     :src="prop.menu.src"
                 />
             </div>
-            <span>{{ prop.menu.title }}</span>
+            <span class="lg:block md:hidden block">{{ prop.menu.title }}</span>
         </div>
     </div>
 </template>

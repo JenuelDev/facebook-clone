@@ -34,6 +34,11 @@ function actionHandler(key: string) {
         return;
     }
 
+    /**
+     * Write Code Here to Catch The Key,
+     * and maybe add some logic
+     */
+
     selectedMenu.value = key;
 }
 </script>
@@ -73,6 +78,17 @@ function actionHandler(key: string) {
                         v-else-if="selectedMenu === 'display'"
                         @action="actionHandler"
                     />
+                    <div v-else>
+                        <div class="flex gap-3 items-center">
+                            <div
+                                class="w-40px h-40px rounded-full light:bg-white light:hover:bg-gray-200 flex dark:hover:bg-[var(--third-background)] items-center justify-center cursor-pointer text-size-20px"
+                                @click="selectedMenu = 'default'"
+                            >
+                                <Icon icon="material-symbols:arrow-back" />
+                            </div>
+                            <div class="font-700 text-size-20px">Nothing</div>
+                        </div>
+                    </div>
                 </transition>
             </div>
         </template>

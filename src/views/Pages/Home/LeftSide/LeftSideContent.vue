@@ -4,7 +4,9 @@ import MenuComponent from "./Partials/MenuComponent.vue";
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
 import dayjs from "dayjs";
+import { useMenuStore } from "@/stores/menuStore";
 
+const menuStore = useMenuStore();
 const selectedMenu = ref("home");
 const DefaultMenus = [
     {
@@ -156,7 +158,8 @@ const links = [
 </script>
 <template>
     <div
-        class="w-full max-w-300px sticky top-0 overflow-y-auto h-[calc(100% - var(--header-height))] flex flex-col justify-between pb-20px overflowing-div"
+        class="lg:w-full md:w-100px w-full max-w-300px md:sticky top-0 overflow-y-auto md:h-[calc(100% - var(--header-height))] h-full flex flex-col justify-between pb-20px overflowing-div fixed z-999 bg-[var(--background)] md:ml-0 -ml-400px transition-all"
+        :class="{ 'ml-0': menuStore.showLeftFix }"
     >
         <div class="mt-3">
             <template
@@ -178,7 +181,9 @@ const links = [
                 <MenuComponent v-model="selectedMenu" :menu="menu" />
             </template>
         </div>
-        <div class="pt-20px flex items-center flex-wrap pl-20px mr-1">
+        <div
+            class="pt-20px flex items-center flex-wrap pl-20px mr-1 lg:flex md:hidden flex"
+        >
             <template v-for="(link, index) in links" :key="index + 'Link'">
                 <small>
                     <a
@@ -193,4 +198,9 @@ const links = [
             </template>
         </div>
     </div>
+    <div
+        class="fixed top-0 left-0 h-full w-full z-888 bg-black opacity-80"
+        v-show="menuStore.showLeftFix"
+        @click="menuStore.showLeftFix = false"
+    ></div>
 </template>
