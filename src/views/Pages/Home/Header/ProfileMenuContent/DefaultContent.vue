@@ -38,7 +38,11 @@ const menuOptions = [
     <div>
         <div class="shadow-lg p-2">
             <div class="py-2">
-                <div class="flex gap-3 items-center">
+                <a
+                    href="https://brojenuel.com"
+                    target="_blank"
+                    class="flex gap-3 items-center"
+                >
                     <div
                         class="h-40px w-40px bg-gray-500 flex items-center justify-center rounded-full overflow-hidden relative"
                     >
@@ -48,8 +52,8 @@ const menuOptions = [
                             src="/images/profile/profile.jpg"
                         />
                     </div>
-                    <span class="font-600">Jenuel Oras Ganawed</span>
-                </div>
+                    <span class="font-600">BroJenuel</span>
+                </a>
             </div>
             <hr />
             <div class="pt-4">

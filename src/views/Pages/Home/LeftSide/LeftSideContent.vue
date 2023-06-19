@@ -21,7 +21,7 @@ const DefaultMenus = [
         key: "me",
         type: "image",
         src: "/images/profile/profile.jpg",
-        title: "Jenuel Oras Ganawed",
+        title: "BroJenuel",
         path: "/ganawed",
         icon: "",
     },

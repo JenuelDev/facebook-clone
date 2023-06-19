@@ -38,7 +38,8 @@
 }
 
 .overflowing-div {
-    &:hover {
+    &:hover,
+    &:active {
         &::-webkit-scrollbar-thumb {
             background-color: var(--primary);
             opacity: 1;

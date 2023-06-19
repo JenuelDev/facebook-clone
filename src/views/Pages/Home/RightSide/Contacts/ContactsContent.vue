@@ -46,8 +46,12 @@ const contacts = [
 <template>
     <div class="pr-2">
         <div class="flex items-center justify-between">
-            <h5 class="font-bold select-none">Contacts</h5>
-            <div class="flex gap-1 text-size-20px">
+            <h5
+                class="font-bold select-none lg:text-lg text-xs lg:text-left text-right"
+            >
+                Contacts
+            </h5>
+            <div class="lg:flex hidden gap-1 text-size-20px">
                 <div
                     class="flex items-center justify-center w-35px h-35px hover:bg-[var(--third-background)] cursor-pointer rounded-full transform scale-100 active:scale-110"
                 >
@@ -74,7 +78,7 @@ const contacts = [
                 class="flex gap-3 items-center group-hover:bg-[var(--secondary-background)] w-full p-2 rounded-md"
             >
                 <div
-                    class="h-25px w-25px bg-gray-500 flex items-center justify-center rounded-full overflow-hidden relative"
+                    class="lg:h-25px lg:w-25px h-50px w-50px bg-gray-500 flex items-center justify-center rounded-full overflow-hidden relative"
                 >
                     <img
                         alt="profile image"
