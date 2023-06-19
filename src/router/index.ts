@@ -13,7 +13,7 @@ const router = createRouter({
 			children: [
 				{
 					path: '',
-					component: () => import("@/views/Pages/Home/Screens/TimeLineScreen.vue")
+					component: () => import("@/views/Pages/Home/Screens/TimeLine/TimeLineScreen.vue")
 				}
 			]
 		}

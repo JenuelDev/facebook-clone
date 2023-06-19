@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import StoriesTimeLine from "./Stories/StoriesTimeLine.vue";
+</script>
 <template>
     <div class="px-15px h-full overflow-y-auto pt-2 pb-5">
+        <div>
+            <StoriesTimeLine />
+        </div>
         this is timeline Lorem ipsum dolor sit, amet consectetur adipisicing
         elit. Repellendus earum maiores dolore ad odio amet officia, quae
         tenetur ipsum natus fuga, aperiam exercitationem pariatur, rem dolor
