@@ -9,8 +9,12 @@ import RightSideContent from "./RightSide/RightSideContent.vue";
         class="flex justify-between h-100vh overflow-y-auto pt-[var(--header-height)] overflowing-div"
     >
         <LeftSideContent />
-        <div class="max-w-600px w-full h-[calc(100% - 70px)] mx-auto">
-            <RouterView />
+        <div class="w-full h-[calc(100% - 70px)] mx-auto overflow-y-auto">
+            <div
+                class="max-w-600px h-100% w-full mx-auto px-15px h-full pt-2 pb-5"
+            >
+                <RouterView />
+            </div>
         </div>
         <RightSideContent />
     </div>

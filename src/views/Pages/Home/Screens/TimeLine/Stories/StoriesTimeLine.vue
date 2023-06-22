@@ -30,7 +30,7 @@ const breakpoints = ref({
     1024: {
         itemsToShow: 4,
         itemsToScroll: 4,
-        snapAlign: "start",
+        snapAlign: "center",
     },
 });
 
@@ -132,6 +132,7 @@ function goToLink(link: string, target = "_blank") {
 </template>
 <style lang="scss">
 .carousel__icon {
-    @apply bg-gray-50 rounded-full;
+    background-color: white;
+    border-radius: 100%;
 }
 </style>
