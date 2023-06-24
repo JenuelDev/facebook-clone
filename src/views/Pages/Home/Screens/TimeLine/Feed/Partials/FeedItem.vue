@@ -46,26 +46,29 @@ const props = defineProps({
                 </div>
             </div>
         </div>
-        <div class="pb-2">
-            {{ props.caption }}
-        </div>
-        <div>
-            <!--
-                Since my articles has only one image I only rendered it this way,
-                But if you multiple images, you can set your style on how you render your images here
-            -->
-            <img
-                class="rounded-md"
-                v-for="(img, index) in props.images"
-                :key="index"
-                :src="(img as string)"
-                alt=""
-            />
+        <div class="pb-2 cursor-pointer">
+            <div>
+                {{ props.caption }}
+            </div>
+            <div>
+                <!--
+                    Since my articles has only one image I only rendered it this way,
+                    But if you multiple images, you can set your style on how you render your images here
+                -->
+                <img
+                    class="rounded-md"
+                    v-for="(img, index) in props.images"
+                    :key="index"
+                    :src="(img as string)"
+                    alt=""
+                />
+            </div>
         </div>
         <!-- This is the reactions area, wrote it in a static way, you can dynamically change it whatever you want -->
         <div
             class="flex justify-between py-10px items-center border-b dark:border-b-dark-50"
         >
+            <!-- This is your reactions -->
             <div class="flex items-center">
                 <div
                     class="w-25px h-25px rounded-full bg-blue-600 text-light-50 flex items-center justify-center"
@@ -82,7 +85,11 @@ const props = defineProps({
                 >
                     <Icon icon="twemoji:astonished-face" />
                 </div>
-                <div class="ml-2 text-sm">Johnson, James, and others</div>
+                <div
+                    class="ml-2 text-sm hover:underline cursor-pointer transform scale-100 active:scale-95 select-none"
+                >
+                    Johnson, James, and others
+                </div>
             </div>
             <div
                 class="hover:underline cursor-pointer transform scale-100 active:scale-95 select-none"
@@ -90,9 +97,10 @@ const props = defineProps({
                 3 comments
             </div>
         </div>
+        <!-- posts actions, you can add your own function for button clicks -->
         <div class="flex justify-around mt-2 select-none">
             <div
-                class="w-full p-2 cursor-pointer hover:bg-[var(--third-background)] rounded-md transform scale-100 active:scale-95"
+                class="w-full p-2 cursor-pointer dark:hover:bg-[var(--third-background)] hover:bg-[var(--background)] rounded-md transform scale-100 active:scale-95"
             >
                 <div class="flex justify-center items-center gap-2">
                     <Icon icon="mdi:like-outline" />
@@ -100,7 +108,7 @@ const props = defineProps({
                 </div>
             </div>
             <div
-                class="w-full p-2 cursor-pointer hover:bg-[var(--third-background)] rounded-md transform scale-100 active:scale-95"
+                class="w-full p-2 cursor-pointer dark:hover:bg-[var(--third-background)] hover:bg-[var(--background)] rounded-md transform scale-100 active:scale-95"
             >
                 <div class="flex justify-center items-center gap-2">
                     <Icon icon="mdi:comment-outline" />
@@ -108,7 +116,7 @@ const props = defineProps({
                 </div>
             </div>
             <div
-                class="w-full p-2 cursor-pointer hover:bg-[var(--third-background)] rounded-md transform scale-100 active:scale-95"
+                class="w-full p-2 cursor-pointer dark:hover:bg-[var(--third-background)] hover:bg-[var(--background)] rounded-md transform scale-100 active:scale-95"
             >
                 <div class="flex justify-center items-center gap-2">
                     <Icon icon="uil:share" />

@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import DividerComponent from "@/components/Divider/DividerComponent.vue";
 import MenuComponent from "./Partials/MenuComponent.vue";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { Icon } from "@iconify/vue";
 import dayjs from "dayjs";
 import { useMenuStore } from "@/stores/menuStore";
+import { useRouter } from "vue-router";
 
 const menuStore = useMenuStore();
 const selectedMenu = ref("home");
@@ -14,7 +15,7 @@ const DefaultMenus = [
         type: "icon",
         icon: "material-symbols:home",
         title: "Home",
-        path: "/timeline",
+        path: "/home",
         src: "",
     },
     {
@@ -22,7 +23,7 @@ const DefaultMenus = [
         type: "image",
         src: "/images/profile/profile.jpg",
         title: "BroJenuel",
-        path: "/ganawed",
+        path: "/me",
         icon: "",
     },
 ];
@@ -155,10 +156,24 @@ const links = [
         path: "#",
     },
 ];
+const router = useRouter();
+
+/**
+ * We then watch selected key, then we can add condition for each key selected.
+ * You can modify this function what ever you want. If you like to simplify it, its up to you.
+ */
+watch(
+    () => selectedMenu.value,
+    (val) => {
+        console.log(val);
+        if (val == "home") router.push("/home");
+        if (val == "me") router.push("/home/me");
+    }
+);
 </script>
 <template>
     <div
-        class="lg:w-full md:w-100px w-full max-w-300px md:sticky top-0 overflow-y-auto md:h-[calc(100% - var(--header-height))] h-full flex flex-col justify-between pb-20px overflowing-div fixed z-999 bg-[var(--background)] md:ml-0 -ml-400px transition-all"
+        class="lg:w-full md:w-100px w-full max-w-300px md:sticky top-0 overflow-y-auto md:h-[calc(100% - var(--header-height))] h-full flex flex-col justify-between pb-20px overflowing-div fixed z-999 bg-[var(--background)] md:ml-0 -ml-400px transition-all select-none"
         :class="{ 'ml-0': menuStore.showLeftFix }"
     >
         <div class="mt-3">

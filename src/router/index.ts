@@ -14,6 +14,10 @@ const router = createRouter({
 				{
 					path: '',
 					component: () => import("@/views/Pages/Home/Screens/TimeLine/TimeLineScreen.vue")
+				},
+				{
+					path: 'me',
+					component: () => import("@/views/Pages/Home/Screens/MyProfile/MyProfile.vue")
 				}
 			]
 		}

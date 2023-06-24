@@ -23,7 +23,7 @@ import { Icon } from "@iconify/vue";
         <div class="h-1px w-full bg-[var(--third-background)] my-2"></div>
         <div class="flex sm:flex-row flex-col justify-around select-none">
             <div
-                class="flex items-center gap-2 hover:bg-[var(--third-background)] w-full p-3 rounded-lg cursor-pointer transform scale-100 active:scale-95"
+                class="flex items-center gap-2 dark:hover:bg-[var(--third-background)] hover:bg-[var(--background)] w-full p-3 rounded-lg cursor-pointer transform scale-100 active:scale-95"
             >
                 <Icon
                     class="text-red-500 text-size-25px"
@@ -32,7 +32,7 @@ import { Icon } from "@iconify/vue";
                 <span>Live Video</span>
             </div>
             <div
-                class="flex items-center gap-2 hover:bg-[var(--third-background)] w-full p-3 rounded-lg cursor-pointer transform scale-100 active:scale-95"
+                class="flex items-center gap-2 dark:hover:bg-[var(--third-background)] hover:bg-[var(--background)] w-full p-3 rounded-lg cursor-pointer transform scale-100 active:scale-95"
             >
                 <Icon
                     class="text-green-500 text-size-25px"
@@ -41,7 +41,7 @@ import { Icon } from "@iconify/vue";
                 <span>Photo/video</span>
             </div>
             <div
-                class="flex items-center gap-2 hover:bg-[var(--third-background)] w-full p-3 rounded-lg cursor-pointer transform scale-100 active:scale-95"
+                class="flex items-center gap-2 dark:hover:bg-[var(--third-background)] hover:bg-[var(--background)] w-full p-3 rounded-lg cursor-pointer transform scale-100 active:scale-95"
             >
                 <Icon class="text-orange-400 text-size-25px" icon="ph:smiley" />
                 <span>Feeling/activity</span>
