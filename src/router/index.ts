@@ -17,7 +17,17 @@ const router = createRouter({
 				},
 				{
 					path: 'me',
-					component: () => import("@/views/Pages/Home/Screens/MyProfile/MyProfile.vue")
+					component: () => import("@/views/Pages/Home/Screens/MyProfile/MyProfile.vue"),
+					children: [
+						{
+							path: '',
+							component: () => import("@/views/Pages/Home/Screens/MyProfile/Pages/ProfileTimeline.vue")
+						},
+						{
+							path: "about",
+							component: () => import("@/views/Pages/Home/Screens/MyProfile/Pages/ProfileAbout.vue")
+						}
+					]
 				}
 			]
 		}
