@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
 import { Notify } from "notiflix";
-import { onBeforeMount, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
