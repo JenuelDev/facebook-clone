@@ -1,15 +1,18 @@
 <script setup lang="ts">
+import ProfileOverview from "./ProfileAbout/ProfileOverview.vue";
+import ProfileWorkAndEducation from "./ProfileAbout/ProfileWorkAndEducation.vue";
 import { ref } from "vue";
-
 const selectedMenu = ref("overview");
 const menus = [
     {
         label: "Overview",
         key: "overview",
+        component: ProfileOverview,
     },
     {
         label: "Work And Education",
         key: "work_and_education",
+        component: ProfileWorkAndEducation,
     },
 ];
 </script>
@@ -26,18 +29,9 @@ const menus = [
                 {{ menu.label }}
             </div>
         </div>
-        <div v-if="selectedMenu == 'overview'" class="w-[80%]">
-            <h2>This is Overview page</h2>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            dicta, est sed vitae similique labore illum voluptatibus dolor
-            repellendus doloribus nobis adipisci quae deleniti eius mollitia quo
-            cumque consequatur voluptatem? Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Numquam dicta, est sed vitae similique
-            labore illum voluptatibus dolor repellendus doloribus nobis adipisci
-            quae deleniti eius mollitia quo cumque consequatur voluptatem?
-            Numquam dicta, est sed vitae similique labore illum voluptatibus
-            dolor repellendus doloribus nobis adipisci quae deleniti eius
-            mollitia quo cumque consequatur voluptatem?
-        </div>
+
+        <component
+            :is="menus.find((item) => item.key === selectedMenu)?.component"
+        />
     </div>
 </template>
