@@ -5,6 +5,7 @@ import router from './router'
 const app = createApp(App)
 import 'virtual:windi.css'
 import "./assets/main.scss"
+import 'nprogress/nprogress.css'
 
 app.use(createPinia())
 app.use(router)
