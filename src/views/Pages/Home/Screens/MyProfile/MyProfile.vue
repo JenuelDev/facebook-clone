@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router";
 import { Icon } from "@iconify/vue";
+import { computed } from "vue";
 const route = useRoute();
 const router = useRouter();
 const menuPages = [
@@ -33,6 +34,8 @@ const menuPages = [
 function changePage(menu: { key: string; path: string }) {
     router.push("/home/me/" + menu.path);
 }
+
+const selectedRoute = computed(() => route.matched[2].path);
 </script>
 <template>
     <div>
@@ -97,13 +100,19 @@ function changePage(menu: { key: string; path: string }) {
                         class="opacity-50"
                         :class="{
                             '!opacity-100':
-                                route.path == '/home/me/' + menu.path,
+                                selectedRoute ==
+                                '/home/me' +
+                                    (menu.path != '' ? '/' + menu.path : ''),
                         }"
                     >
                         {{ menu.key }}
                     </span>
                     <div
-                        v-show="route.path == '/home/me/' + menu.path"
+                        v-show="
+                            selectedRoute ==
+                            '/home/me' +
+                                (menu.path != '' ? '/' + menu.path : '')
+                        "
                         class="absolute -bottom-2px w-40px left-[calc(50%-20px)] h-3px rounded-lg bg-[var(--primary)]"
                     ></div>
                 </div>

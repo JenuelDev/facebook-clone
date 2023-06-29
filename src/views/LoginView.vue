@@ -15,7 +15,7 @@ function submit() {
 
     setTimeout(() => {
         data.loading = false;
-        router.push("/home");
+        router.push("/home/main");
     }, 1000);
 }
 </script>

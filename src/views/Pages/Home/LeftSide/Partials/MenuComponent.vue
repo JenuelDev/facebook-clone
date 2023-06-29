@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import { Icon } from "@iconify/vue";
-import { computed } from "vue";
+import { Notify } from "notiflix";
+import { onBeforeMount, onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-const emit = defineEmits(["update:modelValue"]);
+const route = useRoute();
+const router = useRouter();
 const prop = defineProps<{
-    modelValue: string;
     menu: {
-        key: string;
         type: string;
         title: string;
         icon: string;
@@ -15,23 +16,26 @@ const prop = defineProps<{
     };
 }>();
 
-const value = computed({
-    get() {
-        return prop.modelValue;
-    },
-    set(value) {
-        emit("update:modelValue", value);
-    },
-});
+function changeRoute(path: string) {
+    if (path == "#") {
+        Notify.failure("No Page Created For This one");
+        return;
+    }
+    router.push(path);
+}
 </script>
 <template>
+    <!-- 
+        we used route.matched to check if we are in the right route parent,
+        for this menu to stay active even if we refresh
+    -->
     <div
         v-if="prop.menu.type === 'icon'"
         class="flex items-center pl-3 relative cursor-pointer group"
-        @click="value = prop.menu.key"
+        @click="changeRoute(prop.menu.path)"
     >
         <span
-            v-show="value == prop.menu.key"
+            v-show="route.matched.some(({ path }) => path == prop.menu.path)"
             class="absolute h-full w-5px bg-[var(--primary)] left-0 rounded-tr-md rounded-br-md"
         ></span>
         <div
@@ -39,7 +43,11 @@ const value = computed({
         >
             <Icon
                 class="text-size-23px w-30px"
-                :class="{ 'text-[var(--primary)]': value == prop.menu.key }"
+                :class="{
+                    'text-[var(--primary)]': route.matched.some(
+                        ({ path }) => path == prop.menu.path
+                    ),
+                }"
                 v-if="prop.menu.icon"
                 :icon="prop.menu.icon"
             />
@@ -51,10 +59,10 @@ const value = computed({
     <div
         v-else-if="prop.menu.type === 'image'"
         class="flex gap-3 items-center pl-3 cursor-pointer group relative"
-        @click="value = prop.menu.key"
+        @click="changeRoute(prop.menu.path)"
     >
         <span
-            v-show="value == prop.menu.key"
+            v-show="route.matched.some(({ path }) => path == prop.menu.path)"
             class="absolute h-full w-5px bg-[var(--primary)] left-0 rounded-tr-md rounded-br-md"
         ></span>
         <div

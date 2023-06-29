@@ -31,7 +31,7 @@ const menus = [
         </div>
 
         <component
-            :is="menus.find((item) => item.key === selectedMenu)?.component"
+            :is="menus.find((item) => item.key === selectedMenu)?.component as {}"
         />
     </div>
 </template>
