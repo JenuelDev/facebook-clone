@@ -26,6 +26,22 @@ const router = createRouter({
 						{
 							path: "about",
 							component: () => import("@/views/Pages/Home/Screens/MyProfile/Pages/ProfileAbout.vue")
+						},
+						{
+							path: 'photos',
+							component: () => import("@/views/Pages/Home/Screens/MyProfile/Pages/ProfilePhotos.vue")
+						},
+						{
+							path: 'videos',
+							component: () => import("@/views/Pages/Home/Screens/MyProfile/Pages/ProfileVideos.vue")
+						},
+						{
+							path: 'groups',
+							component: () => import("@/views/Pages/Home/Screens/MyProfile/Pages/ProfileGroups.vue")
+						},
+						{
+							path: 'more',
+							component: () => import("@/views/Pages/Home/Screens/MyProfile/Pages/ProfileMore.vue")
 						}
 					]
 				}

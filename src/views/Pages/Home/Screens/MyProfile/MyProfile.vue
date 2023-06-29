@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router";
+import { Icon } from "@iconify/vue";
 const route = useRoute();
 const router = useRouter();
 const menuPages = [
@@ -39,14 +40,14 @@ function changePage(menu: { key: string; path: string }) {
             <div>
                 <img src="https://i.imgur.com/HDJMaLr.png" />
             </div>
-            <div class="-mt-75px pl-20px">
+            <div class="-mt-60px pl-20px flex items-end gap-4">
                 <img
                     class="rounded-full border border-5px border-[var(--background)] relative"
                     src="https://i.imgur.com/2R6Qr3mb.jpg"
                     width="150"
                     height="150"
                 />
-                <div class="mt-20px">
+                <div>
                     <h3 class="text-size-20px font-bold mb-1">BroJenuel</h3>
                     <p class="opacity-50">@BroJenuel</p>
 
@@ -55,6 +56,32 @@ function changePage(menu: { key: string; path: string }) {
                             Hi! I am a software engineer from the Philippines.
                         </p>
                     </div>
+                </div>
+            </div>
+            <div class="pt-20px flex flex-wrap gap-2 cursor-pointer">
+                <div class="whitespace-nowrap select-none opacity-70">
+                    <Icon icon="solar:case-bold" /> Science & Technology
+                </div>
+                <div class="whitespace-nowrap select-none opacity-70">
+                    <Icon icon="carbon:location-filled" /> Cordillera Luzon
+                    Philippines
+                </div>
+                <div
+                    class="whitespace-nowrap select-none opacity-70 hover:opacity-95"
+                >
+                    <a
+                        href="https://brojenuel.com"
+                        target="_blank"
+                        class="text-[var(--primary)] hover:underline"
+                    >
+                        <Icon icon="ph:link-bold" /> BroJenuel.com
+                    </a>
+                </div>
+                <div class="whitespace-nowrap select-none opacity-70">
+                    <Icon icon="material-symbols:cake-sharp" /> July 16, 2023
+                </div>
+                <div class="whitespace-nowrap select-none opacity-70">
+                    <Icon icon="mdi:calendar" /> Joined February 2014
                 </div>
             </div>
             <div

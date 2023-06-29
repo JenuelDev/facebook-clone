@@ -1,14 +1,29 @@
 <script lang="ts" setup>
 import DividerComponent from "@/components/Divider/DividerComponent.vue";
 import MenuComponent from "./Partials/MenuComponent.vue";
-import { ref, watch } from "vue";
+import { onBeforeMount, ref, watch } from "vue";
 import { Icon } from "@iconify/vue";
 import dayjs from "dayjs";
 import { useMenuStore } from "@/stores/menuStore";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const menuStore = useMenuStore();
 const selectedMenu = ref("home");
+const route = useRoute();
+
+onBeforeMount(() => {
+    const arrayMenus = [
+        ...DefaultMenus,
+        ...UtilityMenus,
+        ...groupMenus,
+        ...MyPages,
+        ...links,
+    ];
+
+    selectedMenu.value =
+        arrayMenus.find((item) => item.path === route.path)?.key ?? "home";
+});
+
 const DefaultMenus = [
     {
         key: "home",
@@ -23,7 +38,7 @@ const DefaultMenus = [
         type: "image",
         src: "/images/profile/profile.jpg",
         title: "BroJenuel",
-        path: "/me",
+        path: "/home/me",
         icon: "",
     },
 ];
@@ -129,31 +144,38 @@ const links = [
     {
         title: "Privacy",
         path: "#",
+        key: "asdf",
     },
     {
         title: "Terms",
         path: "#",
+        key: "asdfasdf",
     },
     {
         title: "Advertising",
         path: "#",
+        key: "asdfsdfasdf",
     },
     {
         title: "Advertising",
         appendIcon: "material-symbols:ads-click",
         path: "#",
+        key: "asdfsdf2asdf",
     },
     {
         title: "Cookies",
         path: "#",
+        key: "asdfsdf2asdf5",
     },
     {
         title: "More",
         path: "#",
+        key: "tasdfsdf2asdf5",
     },
     {
         title: "Meta @ " + dayjs().format("YYYY"),
         path: "#",
+        key: "asdsffsdf2asdf5",
     },
 ];
 const router = useRouter();
@@ -165,7 +187,6 @@ const router = useRouter();
 watch(
     () => selectedMenu.value,
     (val) => {
-        console.log(val);
         if (val == "home") router.push("/home");
         if (val == "me") router.push("/home/me");
     }

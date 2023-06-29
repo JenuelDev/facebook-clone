@@ -38,11 +38,7 @@ const menuOptions = [
     <div>
         <div class="shadow-lg p-2">
             <div class="py-2">
-                <a
-                    href="https://brojenuel.com"
-                    target="_blank"
-                    class="flex gap-3 items-center"
-                >
+                <RouterLink to="/home/me" class="flex gap-3 items-center">
                     <div
                         class="h-40px w-40px bg-gray-500 flex items-center justify-center rounded-full overflow-hidden relative"
                     >
@@ -53,7 +49,7 @@ const menuOptions = [
                         />
                     </div>
                     <span class="font-600">BroJenuel</span>
-                </a>
+                </RouterLink>
             </div>
             <hr />
             <div class="pt-4">

@@ -11,6 +11,7 @@ const prop = defineProps<{
         title: string;
         icon: string;
         src: string;
+        path: string;
     };
 }>();
 
