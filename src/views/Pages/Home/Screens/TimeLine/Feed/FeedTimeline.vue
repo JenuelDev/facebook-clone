@@ -24,7 +24,7 @@ function getPosts() {
         backgroundColor: "var(--background)",
     });
     axios
-        .get("https://jenuel.dev/articles.json")
+        .get("https://www.jenuel.dev/articles.json")
         .then(({ data }) => {
             feeds.value = data;
         })

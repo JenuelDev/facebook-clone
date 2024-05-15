@@ -73,7 +73,7 @@ const selectedRoute = computed(() => route.matched[2].path);
                     class="whitespace-nowrap select-none opacity-70 hover:opacity-95"
                 >
                     <a
-                        href="https://jenuel.dev"
+                        href="https://www.jenuel.dev"
                         target="_blank"
                         class="text-[var(--primary)] hover:underline"
                     >
