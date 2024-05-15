@@ -51,8 +51,8 @@ const selectedRoute = computed(() => route.matched[2].path);
                     height="150"
                 />
                 <div>
-                    <h3 class="text-size-20px font-bold mb-1">BroJenuel</h3>
-                    <p class="opacity-50">@BroJenuel</p>
+                    <h3 class="text-size-20px font-bold mb-1">JenuelDev</h3>
+                    <p class="opacity-50">@JenuelDev</p>
 
                     <div>
                         <p>
@@ -73,11 +73,11 @@ const selectedRoute = computed(() => route.matched[2].path);
                     class="whitespace-nowrap select-none opacity-70 hover:opacity-95"
                 >
                     <a
-                        href="https://brojenuel.com"
+                        href="https://jenuel.dev"
                         target="_blank"
                         class="text-[var(--primary)] hover:underline"
                     >
-                        <Icon icon="ph:link-bold" /> BroJenuel.com
+                        <Icon icon="ph:link-bold" /> Jenuel.Dev
                     </a>
                 </div>
                 <div class="whitespace-nowrap select-none opacity-70">

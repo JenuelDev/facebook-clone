@@ -48,7 +48,7 @@ const menuOptions = [
                             src="/images/profile/profile.jpg"
                         />
                     </div>
-                    <span class="font-600">BroJenuel</span>
+                    <span class="font-600">JenuelDev</span>
                 </RouterLink>
             </div>
             <hr />

@@ -18,7 +18,7 @@ const DefaultMenus = [
     {
         type: "image",
         src: "/images/profile/profile.jpg",
-        title: "BroJenuel",
+        title: "JenuelDev",
         path: "/home/me",
         icon: "",
     },
@@ -90,7 +90,7 @@ const MyPages = [
     {
         type: "image",
         src: "https://i.imgur.com/kpVp6fib.jpg",
-        title: "BroJenuel",
+        title: "JenuelDev",
         path: "#",
         icon: "material-symbols:groups-2-rounded",
     },

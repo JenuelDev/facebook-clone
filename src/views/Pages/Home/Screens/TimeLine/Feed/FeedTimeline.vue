@@ -47,7 +47,7 @@ onMounted(() => {
             class="p-10px bg-[var(--secondary-background)] rounded-lg mb-15px"
         >
             <FeedItem
-                author="BroJenuel"
+                author="JenuelDev"
                 author_profile_img="/images/profile/profile.jpg"
                 :caption="feed.summary"
                 :type="feed.cover_img ? 'image' : 'text'"
