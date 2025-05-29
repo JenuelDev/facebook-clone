@@ -20,6 +20,17 @@ function submit() {
 }
 </script>
 <template>
+    <div class="px-30px py-5">
+        <div><b>⚠️ Disclaimer & Security Notice</b></div>
+        This website is a clone created for educational and demonstrational
+        purposes only. It is not affiliated with or endorsed by Facebook, Meta
+        Platforms Inc., or any of its subsidiaries. Do NOT enter real login
+        credentials, personal information, or financial data. This site does not
+        collect or store any user information. The appearance of this website is
+        intended to replicate Facebook solely for testing, UI/UX demonstration,
+        or academic learning. By continuing, you acknowledge that you understand
+        this is a non-functional simulation and not the real Facebook platform.
+    </div>
     <div class="fixed top-10px right-10px text-size-30px cursor-pointer">
         <transition name="fade">
             <Icon
