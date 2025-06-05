@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const sponsorsList = [
     {
-        link: "https://www.jenuel.dev/blog/Create-Chrome-Extension-Using-Vue-The-Easiest-Way",
+        link: "https://blog.jenuel.dev/blog/Create-Chrome-Extension-Using-Vue-The-Easiest-Way",
         img: "https://i.imgur.com/ZOIrwhRb.png",
         title: "Create Chrome Extension Using Vue",
         sub_title: "easy it is to create a Chrome extension",
     },
     {
-        link: "https://www.jenuel.dev",
+        link: "https://jenuel.dev",
         img: "https://i.imgur.com/QROjWHIb.png",
         title: "Creator Of This FB Clone",
         sub_title: "Visit his website to know more about him.",
